@@ -26,7 +26,7 @@ unzip with tar xf followed by filename\
 cd into boost folder
 ( where I've put 3.8, put 3.6 or whatever your python3 version is )
 ```
-./bootstrap.sh --with-python-version=3.8
+./bootstrap.sh --with-python-version=3.10
 sudo nano project-config.jam
 ```
 change\
@@ -35,10 +35,10 @@ to
 ```
 project : default-build <toolset>gcc :
 
-import python :
+import python ;
 if ! [ python.configured ]
 {
-    using python : 3.8 : "/usr" :
+    using python : 3.10 : "/usr" ;
 }
 ```
 
